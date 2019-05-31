@@ -1,1 +1,1 @@
-include ':app', ':mylibrary', ':firefoxlitedownloaderlibrary'
+include ':app', ':FirefoxLite_Downloader_Library'

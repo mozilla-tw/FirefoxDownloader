@@ -28,23 +28,22 @@ public class DownloadFileWorker extends Worker {
     @Override
     public Result doWork() {
         try {
-            URL u = new URL("https://i.pinimg.com/originals/49/70/17/497017869c892b73b128ff72f2732035.jpg");
-            URLConnection c = u.openConnection();
-            c.connect();
-            int lengthOfFile = c.getContentLength();
-            InputStream in = c.getInputStream();
+            URL url = new URL("http://mattmahoney.net/dc/enwik8.pmd");
+            URLConnection connection = url.openConnection();
+            connection.connect();
+            int lengthOfFile = connection.getContentLength();
+            InputStream in = connection.getInputStream();
             byte[] buffer = new byte[1024];
-            int len1=0;
-            String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/mozilla_checkinngggggg";
+            int len=0;
+            String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DownloaderSampleDownloadFile";
             File storageDir = new File(path);
             FileOutputStream f = new FileOutputStream(storageDir);
             long total = 0;
-            while ((len1 = in.read(buffer)) > 0) {
-                total += len1; //total = total + len1
+            while ((len = in.read(buffer)) > 0) {
+                total = total+len;
                 int percent = (int) ((total * 100) / lengthOfFile);
                 liveDataHelper.updatePercentage(percent);
-
-                f.write(buffer,0,len1);
+                f.write(buffer,0,len);
             }
         } catch (Exception e) {
             e.printStackTrace();
