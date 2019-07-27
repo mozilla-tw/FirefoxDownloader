@@ -1,4 +1,4 @@
-package com.example.firefoxlitedownloaderlibrary;
+package org.mozilla.firefoxlitedownloaderlibrary;
 
 import java.util.concurrent.TimeUnit;
 

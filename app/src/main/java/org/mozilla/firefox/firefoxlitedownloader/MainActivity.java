@@ -1,12 +1,13 @@
-package com.example.mandeep.firefoxdownloader;
+package org.mozilla.firefox.firefoxlitedownloader;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
-import com.example.firefoxlitedownloaderlibrary.MainFunctionAccessFile;
-import com.example.firefoxlitedownloaderlibrary.LiveDataHelper;
+import org.mozilla.firefoxlitedownloaderlibrary.MainFunctionAccessFile;
+import org.mozilla.firefoxlitedownloaderlibrary.LiveDataHelper;
+import org.mozilla.firefox.firefoxlitedownloader.R;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
