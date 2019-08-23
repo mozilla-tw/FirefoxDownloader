@@ -1,4 +1,4 @@
-package com.example.mandeep.firefoxdownloader;
+package org.mozilla.FirefoxLite.firefoxdownloader;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

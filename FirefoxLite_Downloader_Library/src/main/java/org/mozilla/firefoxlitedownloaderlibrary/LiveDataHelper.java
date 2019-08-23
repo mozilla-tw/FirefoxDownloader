@@ -1,4 +1,4 @@
-package com.example.firefoxlitedownloaderlibrary;
+package org.mozilla.firefoxlitedownloaderlibrary;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
