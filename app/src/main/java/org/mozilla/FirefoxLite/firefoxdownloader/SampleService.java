@@ -20,16 +20,14 @@ import static com.sample.NotificationHelper.channel1ID;
 
 public class SampleService extends LifecycleService {
     final static String MY_ACTION = "MY_ACTION";
-
+    final static int NOTIFICATION_ID=1;
     final String URL1 = "http://mattmahoney.net/dc/enwik8.pmd";
     private static String dirPath;
     int downloadIdOne;
-    NotificationHelper mNotificationHelper;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        mNotificationHelper = new NotificationHelper(this);
         dirPath = Utils.getRootDirPath(getApplicationContext());
 
     }
@@ -51,7 +49,7 @@ public class SampleService extends LifecycleService {
                 MozzDownloader.cancel(downloadIdOne);
                 Notification notification=new NotificationCompat.Builder(getApplicationContext(),channel1ID)
                         .setContentTitle("mandy.pmd").setContentText("Schedule Terminated").setSmallIcon(R.drawable.ic_launcher_background).build();
-                startForeground(1,notification);
+                startForeground(NOTIFICATION_ID,notification);
                 return START_STICKY;
             }
         }
@@ -85,7 +83,7 @@ public class SampleService extends LifecycleService {
                             public void onStartOrResume() {
                                 Notification notification=new NotificationCompat.Builder(getApplicationContext(),channel1ID)
                                         .setContentTitle("mandy.pmd").setContentText("Download Running").setSmallIcon(R.drawable.ic_launcher_background).build();
-                                startForeground(1,notification);
+                                startForeground(NOTIFICATION_ID,notification);
                                 Intent intent = new Intent();
                                 intent.setAction(MY_ACTION);
                                 intent.putExtra("Statusofdownload","started");
@@ -98,7 +96,7 @@ public class SampleService extends LifecycleService {
                             public void onPause() {
                                 Notification notification=new NotificationCompat.Builder(getApplicationContext(),channel1ID)
                                         .setContentTitle("mandy.pmd").setContentText("Download  Paused").setSmallIcon(R.drawable.ic_launcher_background).build();
-                                startForeground(1,notification);
+                                startForeground(NOTIFICATION_ID,notification);
 
                                 sendOnchannel1("mandy.pmd", "Download Paused");
                                 Intent intent = new Intent();
@@ -114,7 +112,7 @@ public class SampleService extends LifecycleService {
                             public void onCancel() {
                                 Notification notification=new NotificationCompat.Builder(getApplicationContext(),channel1ID)
                                         .setContentTitle("mandy.pmd").setContentText("Download Cancelled").setSmallIcon(R.drawable.ic_launcher_background).build();
-                                startForeground(1,notification);
+                                startForeground(NOTIFICATION_ID,notification);
                                 Intent intent = new Intent();
                                 intent.setAction(MY_ACTION);
                                 intent.putExtra("Statusofdownload","cancelled");
@@ -164,7 +162,7 @@ public class SampleService extends LifecycleService {
                         public void onStartOrResume() {
                             Notification notification=new NotificationCompat.Builder(getApplicationContext(),channel1ID)
                                     .setContentTitle("mandy.pmd").setContentText("Download Running").setSmallIcon(R.drawable.ic_launcher_background).build();
-                            startForeground(1,notification);
+                            startForeground(NOTIFICATION_ID,notification);
                             Intent intent = new Intent();
                             intent.setAction(MY_ACTION);
                             intent.putExtra("Statusofdownload","started");
@@ -177,7 +175,7 @@ public class SampleService extends LifecycleService {
                         public void onPause() {
                             Notification notification=new NotificationCompat.Builder(getApplicationContext(),channel1ID)
                                     .setContentTitle("mandy.pmd").setContentText("Download  Paused").setSmallIcon(R.drawable.ic_launcher_background).build();
-                            startForeground(1,notification);
+                            startForeground(NOTIFICATION_ID,notification);
 
                             sendOnchannel1("mandy.pmd", "Download Paused");
                             Intent intent = new Intent();
@@ -193,7 +191,7 @@ public class SampleService extends LifecycleService {
                         public void onCancel() {
                             Notification notification=new NotificationCompat.Builder(getApplicationContext(),channel1ID)
                                     .setContentTitle("mandy.pmd").setContentText("Download Cancelled").setSmallIcon(R.drawable.ic_launcher_background).build();
-                            startForeground(1,notification);
+                            startForeground(NOTIFICATION_ID,notification);
                             Intent intent = new Intent();
                             intent.setAction(MY_ACTION);
                             intent.putExtra("Statusofdownload","cancelled");
