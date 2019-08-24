@@ -36,6 +36,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.LifecycleOwner;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
 
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
     Long lasttimestamp;
     MyReceiver myReceiver;
     String schedulesession;
+    RecyclerView downloadlistrecyclerview;
 
     private class MyReceiver extends BroadcastReceiver{
 
@@ -137,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        downloadlistrecyclerview=(RecyclerView) findViewById(R.id.downloadlist);
         myReceiver = new MyReceiver();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(SampleService.MY_ACTION);

@@ -25,6 +25,7 @@ public class SampleService extends LifecycleService {
     private static String dirPath;
     int downloadIdOne;
 
+
     @Override
     public void onCreate() {
         super.onCreate();
