@@ -1,4 +1,4 @@
-package com.example.firefoxlitedownloaderlibrary;
+package org.mozilla.FirefoxLite.firefoxdownloader;
 
 import org.junit.Test;
 

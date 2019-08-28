@@ -1,4 +1,4 @@
-package com.example.firefoxlitedownloaderlibrary;
+package org.mozilla.firefoxlitedownloaderlibrary;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

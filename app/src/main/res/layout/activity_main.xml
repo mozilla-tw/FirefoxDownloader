@@ -4,38 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="org.mozilla.FirefoxLite.firefoxdownloader.MainActivity">
 
-    <Button
-        android:id="@+id/btnDownload"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="89dp"
-        android:text="Download Now"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="191dp" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="101dp"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="79dp" />
+        android:layout_height="match_parent"
+        android:id="@+id/downloadlist">
+    </androidx.recyclerview.widget.RecyclerView>
 
-    <Button
-        android:id="@+id/btnSchedule"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="88dp"
-        android:layout_marginBottom="195dp"
-        android:text="Schedule  Download" />
 </RelativeLayout>
